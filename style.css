@@ -1458,14 +1458,15 @@ a:hover > .arrow { transform: translateX(3px); }
 
 /* 18a. Hover and press: small and physical */
 @media (hover: hover) {
+  /* big cards lift with a whisper of tilt; small ones tilt a little more */
   .bento__card:hover,
-  .prog:hover,
-  .place:hover,
-  .info:hover { translate: 0 -5px; rotate: -0.6deg; }
+  .prog:hover { translate: 0 -5px; rotate: -0.5deg; }
   .bento__card:nth-child(even):hover,
-  .prog:nth-child(even):hover,
+  .prog:nth-child(even):hover { rotate: 0.5deg; }
+  .place:hover,
+  .info:hover { translate: 0 -6px; rotate: -1.2deg; }
   .place:nth-child(even):hover,
-  .info:nth-child(even):hover { rotate: 0.6deg; }
+  .info:nth-child(even):hover { rotate: 1.2deg; }
   .prog:hover .prog__icon { animation: wiggle 0.7s var(--ease-out); }
   .drawing:hover { animation: none; transform: rotate(0deg) scale(1.03); }
 }
@@ -1672,8 +1673,9 @@ html.shot .scribble__line path { animation: none !important; opacity: 1 !importa
   .hero__actions .btn { flex: 1 1 auto; }
   .chips { gap: 8px; }
   .chip { font-size: 0.9rem; }
-  .places { grid-template-columns: minmax(0, 1fr); }
+  .places { grid-template-columns: minmax(0, 1fr); gap: 16px; }
   .place--pool { grid-column: auto; }
+  .place__art { height: 140px; margin-bottom: 16px; }
   .care__list { grid-template-columns: minmax(0, 1fr); }
   .care__list li { grid-template-columns: 48px minmax(0, 1fr); column-gap: 16px; }
   .care__list li svg { grid-row: span 2; margin: 0; }
