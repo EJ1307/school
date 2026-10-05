@@ -461,7 +461,7 @@ a:hover > .arrow { transform: translateX(3px); }
 }
 
 /* ---------- 7. Hero ---------- */
-.hero { padding-block: clamp(28px, 4vw, 56px) clamp(64px, 8vw, 112px); }
+.hero { padding-block: clamp(28px, 4vw, 56px) clamp(48px, 5vw, 72px); }
 .hero__grid {
   display: grid;
   grid-template-columns: minmax(0, 1.04fr) minmax(0, 1fr);
@@ -658,7 +658,7 @@ a:hover > .arrow { transform: translateX(3px); }
   border-radius: 20px;
   background: var(--c);
 }
-.prog__icon svg { width: 54px; height: 54px; }
+.prog__icon svg { width: 58px; height: 58px; }
 .prog__age { font-weight: 800; font-size: 0.95rem; color: var(--ink-2); }
 .prog h3 { font-size: clamp(1.9rem, 1.5rem + 1vw, 2.4rem); line-height: 1; margin-top: 4px; }
 
@@ -1097,6 +1097,10 @@ a:hover > .arrow { transform: translateX(3px); }
   margin-bottom: clamp(56px, 7vw, 88px);
 }
 .hops__step { position: relative; }
+.hops__step { --i: 0; }
+.hops__step--2 { --i: 1; }
+.hops__step--3 { --i: 2; }
+.hops__step--4 { --i: 3; }
 .hops__tile {
   --c: var(--tomato);
   display: grid;
@@ -1242,7 +1246,7 @@ a:hover > .arrow { transform: translateX(3px); }
   padding-right: 44px;
   background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 9l6 6 6-6' fill='none' stroke='%231F2547' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") right 14px center / 20px no-repeat;
 }
-.field input::placeholder { color: rgba(31, 37, 71, 0.4); }
+.field input::placeholder { color: rgba(31, 37, 71, 0.5); }
 .field input:hover, .field select:hover, .field textarea:hover { border-color: rgba(31, 37, 71, 0.5); }
 .field input:focus, .field select:focus, .field textarea:focus {
   outline: none;
@@ -1594,6 +1598,7 @@ html.shot .scribble__line path { animation: none !important; opacity: 1 !importa
 /* ---------- 19. Responsive ---------- */
 @media (max-width: 1100px) {
   .bento__card--ratio { grid-column: span 12; }
+  .bento__card--ratio:not(:only-child) { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); align-items: end; gap: 24px 40px; }
   .bento__card--play { grid-column: span 7; }
   .bento__card--outdoors { grid-column: span 5; }
   .bento__card--lang { grid-column: span 7; }
@@ -1626,6 +1631,7 @@ html.shot .scribble__line path { animation: none !important; opacity: 1 !importa
 }
 
 @media (max-width: 760px) {
+  .bento__card--ratio:not(:only-child) { display: flex; }
   .prog-grid { grid-template-columns: minmax(0, 1fr); }
   .bento__card--play,
   .bento__card--outdoors,
